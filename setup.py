@@ -1,7 +1,8 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 #
 #   IGC to Google Earth converter
-#   Copyright (C) 2009  Marc Poulhiès
+#   Copyright (C) 2009  Marc PoulhiÃ¨s
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
