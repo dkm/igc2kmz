@@ -1,8 +1,6 @@
-diff --git a/igc2kmz/__init__.py b/igc2kmz/__init__.py
-index 2db7ce2..50464a5 100644
---- a/igc2kmz/__init__.py
-+++ b/igc2kmz/__init__.py
-@@ -183,7 +183,7 @@ class Stock(object):
+--- igc2kmz/igc2kmz/__init__.py	2009-06-15 13:33:55.000000000 +0200
++++ igc2kmz.orig/igc2kmz/__init__.py	2009-06-15 13:41:43.000000000 +0200
+@@ -183,7 +183,7 @@
                                     line_style)
          self.kmz.add_roots(self.xc_style2)
          #

@@ -8,12 +8,6 @@ Homepage: <insert the upstream URL, if relevant>
 
 Package: python-igc2kmz
 Architecture: all
-Depends: python2.6-igc2kmz
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
-
-Package: python2.6-igc2kmz
-Architecture: any
 Depends: ${python:Depends}
 Description: <insert up to 60 chars description>
  <insert long description, indented with spaces>
