@@ -1,11 +1,17 @@
 #!/usr/bin/make -f
+# -*- mode: makefile; coding: utf-8 -*-
 
-DEB_PYTHON_SYSTEM = pysupport
 
 include /usr/share/cdbs/1/rules/debhelper.mk
-#include /usr/share/cdbs/1/class/makefile.mk
-
-
-# Add here any variable or target overrides you need.
-
+DEB_PYTHON_SYSTEM = pysupport
 include /usr/share/cdbs/1/class/python-distutils.mk
+##include /usr/share/cdbs/1/rules/patchsys-quilt.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+
+DEB_COMPRESS_EXCLUDE := .py
+
+# $(patsubst %,install/%,$(cdbs_python_packages))
+# 	mv debian/$(cdbs_curpkg)/usr/lib/python*/site-packages/igc2kmz/images debian/$(cdbs_curpkg)/usr/share/$(cdbs_curpkg)
+
+# $(patsubst %,binary-install/%,$(cdbs_python_packages)) find debian/$(cdbs_curpkg)/usr/share/ -type f -exec chmod -R a-x {} \;
+

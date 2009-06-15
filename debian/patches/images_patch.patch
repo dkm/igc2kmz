@@ -1,0 +1,13 @@
+diff --git a/igc2kmz/__init__.py b/igc2kmz/__init__.py
+index 2db7ce2..50464a5 100644
+--- a/igc2kmz/__init__.py
++++ b/igc2kmz/__init__.py
+@@ -183,7 +183,7 @@ class Stock(object):
+                                    line_style)
+         self.kmz.add_roots(self.xc_style2)
+         #
+-        self.pixel_url = os.path.join('images', 'pixel.png')
++        self.pixel_url = os.path.join('/usr/share/igc2kmz/images', 'pixel.png')
+         pixel = open(os.path.join(BASE_DIR, self.pixel_url)).read()
+         self.kmz.add_files({self.pixel_url: pixel})
+         #

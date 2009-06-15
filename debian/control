@@ -6,8 +6,20 @@ Build-Depends: cdbs, debhelper (>= 7)
 Standards-Version: 3.8.1
 Homepage: <insert the upstream URL, if relevant>
 
-Package: igc2kmz
+Package: python-igc2kmz
+Architecture: all
+Depends: python2.6-igc2kmz
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: python2.6-igc2kmz
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${python:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: igc2kmz-cli
+Architecture: any
+Depends: ${python:Depends}, python-igc2kmz 
 Description: <insert up to 60 chars description>
  <insert long description, indented with spaces>
