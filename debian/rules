@@ -17,9 +17,9 @@ binary-install/igc2kmz-cli::
 	mv debian/$(cdbs_curpkg)/usr/bin/leonardo2kmz.py debian/$(cdbs_curpkg)/usr/bin/leonardo2kmz
 	mv debian/$(cdbs_curpkg)/usr/bin/olc2gpx.py debian/$(cdbs_curpkg)/usr/bin/olc2gpx
 
-binary-install/python-igc2kmz::
-	mkdir -p debian/$(cdbs_curpkg)/usr/share/$(cdbs_curpkg)/
-	mv debian/$(cdbs_curpkg)/usr/share/pyshared/igc2kmz/images debian/$(cdbs_curpkg)/usr/share/$(cdbs_curpkg)/
+#binary-install/python-igc2kmz::
+#	mkdir -p debian/$(cdbs_curpkg)/usr/share/$(cdbs_curpkg)/
+#	mv debian/$(cdbs_curpkg)/usr/share/pyshared/igc2kmz/images debian/$(cdbs_curpkg)/usr/share/$(cdbs_curpkg)/
 
 # $(patsubst %,install/%,$(cdbs_python_packages))
 # 	mv debian/$(cdbs_curpkg)/usr/lib/python*/site-packages/igc2kmz/images debian/$(cdbs_curpkg)/usr/share/$(cdbs_curpkg)
