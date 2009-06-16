@@ -2,7 +2,7 @@ Source: igc2kmz
 Section: utils
 Priority: extra
 Maintainer: Marc Poulhiès <dkm@kataplop.net>
-Build-Depends: cdbs, debhelper (>= 7)
+Build-Depends: cdbs, debhelper (>= 7), python-support
 Standards-Version: 3.8.1
 Homepage: http://github.com/twpayne/igc2kmz/
 

@@ -1,4 +1,10 @@
-igc2kmz (0.1-1) unstable; urgency=low
+igc2kmz (0.1-1~ppa2) jaunty; urgency=low
+
+  * fix build deps
+
+ -- Marc Poulhiès <dkm@kataplop.net>  Tue, 16 Jun 2009 14:27:29 +0200
+
+igc2kmz (0.1-1~ppa1) jaunty; urgency=low
 
   * Initial release
 
