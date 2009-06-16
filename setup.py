@@ -35,6 +35,6 @@ setup (
                                    "igc2task.py", 
                                    "leonardo2kmz.py", 
                                    "olc2gpx.py"]],
-    package_data={'igc2kmz': ['images/*']},
+    data_files=[('share/python-igc2kmz/images/', ['images/paraglider.png', 'images/pixel.png'])]
     )
 
