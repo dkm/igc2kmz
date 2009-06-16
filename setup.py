@@ -29,7 +29,7 @@ if version < '2.5':
 
 setup (
     name = "igc2kmz",
-    packages = ['igc2kmz'],
+    packages = ['igc2kmz', 'igc2kmz.third_party'],
     scripts=['bin/%s' %i for i in ["brand2kml.py", 
                                    "igc2kmz.py", 
                                    "igc2task.py", 

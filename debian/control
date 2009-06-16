@@ -1,19 +1,19 @@
 Source: igc2kmz
-Section: unknown
+Section: utils
 Priority: extra
 Maintainer: Marc Poulhiès <dkm@kataplop.net>
 Build-Depends: cdbs, debhelper (>= 7)
 Standards-Version: 3.8.1
-Homepage: <insert the upstream URL, if relevant>
+Homepage: http://github.com/twpayne/igc2kmz/
 
 Package: python-igc2kmz
 Architecture: all
 Depends: ${python:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: IGC to Google Earth converter
+ IGC to Google Earth converter. Python module.
 
 Package: igc2kmz-cli
 Architecture: any
 Depends: ${python:Depends}, python-igc2kmz 
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: IGC to Google Earth converter
+ IGC to Google Earth converter. Frontend scripts.

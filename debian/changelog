@@ -1,5 +1,5 @@
 igc2kmz (0.1-1) unstable; urgency=low
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Initial release
 
- -- dkm <dkm@gre.kataplop.net>  Sun, 14 Jun 2009 22:07:58 +0200
+ -- Marc Poulhiès <dkm@kataplop.net>  Sun, 14 Jun 2009 22:07:58 +0200
