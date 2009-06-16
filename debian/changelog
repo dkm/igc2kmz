@@ -1,3 +1,9 @@
+igc2kmz (0.1-1~ppa4) unstable; urgency=low
+
+  * fix (again) location of images
+
+ -- Marc Poulhiès <dkm@kataplop.net>  Tue, 16 Jun 2009 21:07:30 +0200
+
 igc2kmz (0.1-1~ppa3) unstable; urgency=low
 
   * fix location of images
