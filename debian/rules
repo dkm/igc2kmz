@@ -10,6 +10,13 @@ include /usr/share/cdbs/1/rules/simple-patchsys.mk
 
 DEB_COMPRESS_EXCLUDE := .py
 
+binary-install/igc2kmz-cli::
+	mv debian/$(cdbs_curpkg)/usr/bin/igc2kmz.py debian/$(cdbs_curpkg)/usr/bin/igc2kmz-cli
+	mv debian/$(cdbs_curpkg)/usr/bin/brand2kml.py debian/$(cdbs_curpkg)/usr/bin/brand2kml
+	mv debian/$(cdbs_curpkg)/usr/bin/igc2task.py debian/$(cdbs_curpkg)/usr/bin/igc2task
+	mv debian/$(cdbs_curpkg)/usr/bin/leonardo2kmz.py debian/$(cdbs_curpkg)/usr/bin/leonardo2kmz
+	mv debian/$(cdbs_curpkg)/usr/bin/olc2gpx.py debian/$(cdbs_curpkg)/usr/bin/olc2gpx
+
 # $(patsubst %,install/%,$(cdbs_python_packages))
 # 	mv debian/$(cdbs_curpkg)/usr/lib/python*/site-packages/igc2kmz/images debian/$(cdbs_curpkg)/usr/share/$(cdbs_curpkg)
 

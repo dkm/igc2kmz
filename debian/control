@@ -13,7 +13,7 @@ Description: IGC to Google Earth converter
  IGC to Google Earth converter. Python module.
 
 Package: igc2kmz-cli
-Architecture: any
+Architecture: all
 Depends: ${python:Depends}, python-igc2kmz 
 Description: IGC to Google Earth converter
  IGC to Google Earth converter. Frontend scripts.
