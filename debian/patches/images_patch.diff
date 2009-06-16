@@ -1,11 +1,21 @@
---- igc2kmz/igc2kmz/__init__.py	2009-06-15 13:33:55.000000000 +0200
-+++ igc2kmz.orig/igc2kmz/__init__.py	2009-06-15 13:41:43.000000000 +0200
-@@ -183,7 +183,7 @@
+diff --git a/igc2kmz/__init__.py b/igc2kmz/__init__.py
+index 2db7ce2..dbd5322 100644
+--- a/igc2kmz/__init__.py
++++ b/igc2kmz/__init__.py
+@@ -183,14 +183,14 @@ class Stock(object):
                                     line_style)
          self.kmz.add_roots(self.xc_style2)
          #
 -        self.pixel_url = os.path.join('images', 'pixel.png')
-+        self.pixel_url = os.path.join('/usr/share/igc2kmz/images', 'pixel.png')
++        self.pixel_url = os.path.join('/usr/share/python-igc2kmz/images', 'pixel.png')
          pixel = open(os.path.join(BASE_DIR, self.pixel_url)).read()
          self.kmz.add_files({self.pixel_url: pixel})
          #
+         self.visible_none_folder = self.make_none_folder(1)
+         self.invisible_none_folder = self.make_none_folder(0)
+         #
+-        animation_icon_url = os.path.join('images', 'paraglider.png')
++        animation_icon_url = os.path.join('/usr/share/python-igc2kmz/images', 'paraglider.png')
+         self.animation_icon = kml.Icon(href=animation_icon_url)
+         animation_icon = open(os.path.join(BASE_DIR, animation_icon_url)).read()
+         files = {animation_icon_url: animation_icon}
