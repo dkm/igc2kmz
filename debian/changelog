@@ -1,4 +1,10 @@
-igc2kmz (0.1-1~ppa2) jaunty; urgency=low
+igc2kmz (0.1-1~ppa3) unstable; urgency=low
+
+  * fix location of images
+
+ -- Marc Poulhiès <dkm@kataplop.net>  Tue, 16 Jun 2009 20:34:11 +0200
+
+igc2kmz (0.1-1~ppa2) unstable; urgency=low
 
   * fix build deps
 
