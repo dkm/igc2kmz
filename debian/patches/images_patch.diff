@@ -19,3 +19,15 @@ index 2db7ce2..dbd5322 100644
          self.animation_icon = kml.Icon(href=animation_icon_url)
          animation_icon = open(os.path.join(BASE_DIR, animation_icon_url)).read()
          files = {animation_icon_url: animation_icon}
+diff --git a/setup.py b/setup.py
+index e27a6c5..d097d95 100644
+--- a/setup.py
++++ b/setup.py
+@@ -35,6 +35,6 @@ setup (
+                                    "igc2task.py", 
+                                    "leonardo2kmz.py", 
+                                    "olc2gpx.py"]],
+-    package_data={'igc2kmz': ['images/*']},
++    data_files=[('share/python-igc2kmz/images/', ['images/paraglider.png', 'images/pixel.png'])]
+     )
+ 
