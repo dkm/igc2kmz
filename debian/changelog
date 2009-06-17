@@ -1,3 +1,9 @@
+igc2kmz (0.1-1~ppa6) jaunty; urgency=low
+
+  * minor change in setup.py. Jumped from ppa4 to 6 following a bad use of git.
+
+ -- Marc Poulhiès <dkm@kataplop.net>  Wed, 17 Jun 2009 10:24:32 +0200
+
 igc2kmz (0.1-1~ppa4) jaunty; urgency=low
 
   * fix (again) location of images
