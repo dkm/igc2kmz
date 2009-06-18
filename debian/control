@@ -2,12 +2,13 @@ Source: igc2kmz
 Section: utils
 Priority: extra
 Maintainer: Marc Poulhiès <dkm@kataplop.net>
-Build-Depends: cdbs, debhelper (>= 7), python-support
+Build-Depends: cdbs, debhelper (>= 7), python-support, python-all-dev
 Standards-Version: 3.8.1
 Homepage: http://github.com/twpayne/igc2kmz/
 
 Package: python-igc2kmz
 Architecture: all
+Section: python
 Depends: ${python:Depends}
 Description: IGC to Google Earth converter
  IGC to Google Earth converter. Python module.
