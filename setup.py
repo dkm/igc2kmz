@@ -20,15 +20,20 @@
 
 from distutils.core import setup
 
-from sys import version
-
-if version < '2.5':
-    print "Sorry, only for python >= 2.5"
-    sys.exit(-1)
-
-
 setup (
     name = "igc2kmz",
+    description = "IGC to Google Earth converter",
+    long_description = """
+This package provides a python module for handling kmz files. It
+also comes with frontend scripts
+""",
+    version = "0.2",
+    author = 'Tom Payne',
+    author_email = 'twpayne@gmail.com',
+    url = "http://github.com/twpayne/igc2kmz",
+    maintainer = 'Marc Poulhiès',
+    maintainer_email = 'dkm@kataplop.net',
+    license = "GPL",
     packages = ['igc2kmz', 'igc2kmz.third_party'],
     scripts=['bin/%s' %i for i in ["brand2kml.py", 
                                    "igc2kmz.py", 
