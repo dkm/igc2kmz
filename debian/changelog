@@ -1,3 +1,9 @@
+igc2kmz (0.2-1~ppa1) jaunty; urgency=low
+
+  * new 'upstream' version
+
+ -- Marc Poulhiès <dkm@kataplop.net>  Thu, 18 Jun 2009 12:41:45 +0200
+
 igc2kmz (0.1-1~ppa7) jaunty; urgency=low
 
   * no change. Removed all packages from ppa and recreate everything using .orig/diff
