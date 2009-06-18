@@ -1,3 +1,9 @@
+igc2kmz (0.1-1~ppa7) unstable; urgency=low
+
+  * no change. Removed all packages from ppa and recreate everything using .orig/diff
+
+ -- Marc Poulhiès <dkm@kataplop.net>  Thu, 18 Jun 2009 10:16:29 +0200
+
 igc2kmz (0.1-1~ppa6) unstable; urgency=low
 
   * minor change in setup.py. Jumped from ppa4 to 6 following a bad use of git.
