@@ -1,3 +1,9 @@
+igc2kmz (0.2r20090812-1~ppa1) jaunty; urgency=low
+
+  * upstream change
+
+ -- Marc Poulhiès <dkm@kataplop.net>  Wed, 12 Aug 2009 13:47:19 +0200
+
 igc2kmz (0.2-1~ppa1) jaunty; urgency=low
 
   * new 'upstream' version
