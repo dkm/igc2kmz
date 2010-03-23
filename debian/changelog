@@ -1,3 +1,9 @@
+igc2kmz (0.2r20100323-1~ppa1) karmic; urgency=low
+
+  * upstream change + move to karmic
+
+ -- Marc Poulhiès <dkm@kataplop.net>  Tue, 23 Mar 2010 19:40:58 +0100
+
 igc2kmz (0.2r20090812-1~ppa1) jaunty; urgency=low
 
   * upstream change
