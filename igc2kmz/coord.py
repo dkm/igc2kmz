@@ -16,6 +16,7 @@
 
 
 from math import acos, asin, atan2, cos, pi, sin, sqrt
+from pyproj import Proj
 
 
 R = 6371000.0
@@ -48,9 +49,11 @@ class degreemethod(object):
         return deg_f
 
 
+PROJECTOR = Proj(proj='utm',ellps='WGS84')
+
 class Coord(object):
 
-    __slots__ = ('lat', 'lon', 'ele', 'dt')
+    __slots__ = ('lat', 'lon', 'ele', 'dt', 'utm_x', 'utm_y')
 
     lat_deg = degreeattr('lat')
     lon_deg = degreeattr('lon')
@@ -60,6 +63,7 @@ class Coord(object):
         self.lon = lon
         self.ele = ele
         self.dt = dt
+        self.utm_x, self.utm_y = PROJECTOR(self.lat_deg, self.lon_deg)
 
     @classmethod
     def deg(cls, lat, lon, ele, dt=None):
