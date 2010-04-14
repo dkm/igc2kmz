@@ -70,6 +70,10 @@ def set_flight_xc(option, opt, value, parser):
     xc = XC.from_file(open(value))
     flight.xc = xc
 
+def set_cfd_data(option, opt, value, parser):
+    for flight in parser.values.flights:
+        print "Doing CFD for flight !"
+        flight.track.compute_cfd()
 
 def main(argv):
     parser = optparse.OptionParser(
@@ -106,6 +110,10 @@ def main(argv):
     group.add_option('-x', '--xc', metavar='FILENAME', type='string',
             action='callback', callback=set_flight_xc,
             help='set flight XC')
+    group.add_option('--cfd',
+            action='callback', callback=set_cfd_data,
+            help='compute CFD data')
+
     parser.add_option_group(group)
     group = optparse.OptionGroup(parser, 'Per-photo options')
     group.add_option('-p', '--photo', metavar='URL', type='string',
