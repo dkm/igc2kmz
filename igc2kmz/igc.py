@@ -28,6 +28,7 @@ A_RECORD_RE = re.compile(r'A(.*)\Z')
 B_RECORD_RE = re.compile(r'B(\d{2})(\d{2})(\d{2})(\d{2})(\d{5})([NS])'
                          r'(\d{3})(\d{5})([EW])([AV])(\d{5})(\d{5}).*\Z')
 C_RECORD_RE = re.compile(r'C(\d{2})(\d{5})([NS])(\d{3})(\d{5})([EW])(.*)\Z')
+E_RECORD_RE = re.compile(r'E(\d{2})(\d{2})(\d{2})(\w{3})(.*)\Z')
 G_RECORD_RE = re.compile(r'G(.*)\Z')
 HFDTE_RECORD_RE = re.compile(r'H(F)(DTE)(\d\d)(\d\d)(\d\d)\Z')
 HFFXA_RECORD_RE = re.compile(r'H(F)(FXA)(\d+)\Z')
@@ -62,6 +63,11 @@ class Record(object):
 
     __metaclass__ = Metaclass
 
+    def __repr__(self):
+        return '%s(%s)' % (self.__class__.__name__,
+                           ', '.join('%s=%s' % (key, repr(value))
+                                     for key, value in self.__dict__.items()))
+
 
 class ARecord(Record):
 
@@ -78,8 +84,6 @@ class ARecord(Record):
 
 class BRecord(Record):
 
-    __slots__ = ('dt', 'lat', 'lon', 'validity', 'alt', 'ele')
-
     @classmethod
     def parse(cls, line, igc):
         result = cls()
@@ -87,9 +91,18 @@ class BRecord(Record):
         if not m:
             raise SyntaxError, line
         for key, value in igc.i.items():
-            setattr(result, key, int(line[value]))
+            try:
+                setattr(result, key, int(line[value]))
+            except ValueError:
+                setattr(result, key, None)
         time = datetime.time(*map(int, m.group(1, 2, 3)))
+        if 'tds' in igc.i:
+            time = time.replace(microsecond=int(line[igc.i['tds']]) * 100000)
         result.dt = datetime.datetime.combine(igc.hfdterecord.date, time)
+        if igc.b and result.dt < igc.b[-1].dt:
+            igc.hfdterecord.date = datetime.date.fromordinal(
+                    igc.hfdterecord.date.toordinal() + 1)
+            result.dt = datetime.datetime.combine(igc.hfdterecord.date, time)
         result.lat = int(m.group(4)) + int(m.group(5)) / 60000.0
         if 'lad' in igc.i:
             result.lat += int(line[igc.i['lad']]) / 6000000.0
@@ -123,6 +136,18 @@ class CRecord(Record):
             result.lon *= -1
         result.name = m.group(7)
         igc.c.append(result)
+        return result
+
+
+class ERecord(Record):
+
+    @classmethod
+    def parse(cls, line, igc):
+        result = cls()
+        m = E_RECORD_RE.match(line)
+        if not m:
+            raise SyntaxError, line
+        result.value = m.group(4)
         return result
 
 
@@ -177,8 +202,8 @@ class IRecord(Record):
             m = I_RECORD_RE.match(line, 3 + 7 * i, 10 + 7 * i)
             if not m:
                 raise SyntaxError, line
-            igc.i[m.group(3).lower()] = slice(int(m.group(1)),
-                                              int(m.group(2)) + 1)
+            igc.i[m.group(3).lower()] = slice(int(m.group(1)) - 1,
+                                              int(m.group(2)))
         return result
 
 
@@ -240,3 +265,8 @@ class IGC(object):
             if any(getattr(b, k) for b in self.b):
                 kwargs[k] = [getattr(b, k) for b in self.b]
         return track.Track(coords, **kwargs)
+
+
+if __name__ == '__main__':
+    import sys
+    print repr(IGC(sys.stdin).__dict__)
