@@ -1,3 +1,15 @@
+igc2kmz (0.3r20110312-1~ppa1) maverick; urgency=low
+
+  * fix packaging
+
+ -- Marc Poulhiès <dkm@kataplop.net> Sat, 12 Mar 2011 09:43:35 +0100
+
+igc2kmz (0.2-1~ppa1) maverick; urgency=low
+
+  * upstream change + maverick package 
+
+ -- Marc Poulhiès <dkm@kataplop.net>  Sat, 12 Mar 2011 09:30:58 +0100
+
 igc2kmz (0.1-1~ppa2) jaunty; urgency=low
 
   * fix build deps
